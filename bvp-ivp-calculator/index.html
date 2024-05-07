@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BVP and IVP Solver</title>
+</head>
+<body>
+    <h2>BVP and IVP Solver</h2>
+    <form action="/solve" method="POST">
+        <label for="problem_type">Select problem type:</label><br>
+        <select id="problem_type" name="problem_type">
+            <option value="bvp">Boundary Value Problem (BVP)</option>
+            <option value="ivp">Initial Value Problem (IVP)</option>
+        </select><br><br>
+        <label for="x_start">Enter start value of x:</label><br>
+        <input type="number" id="x_start" name="x_start"><br><br>
+        <label for="x_end">Enter end value of x:</label><br>
+        <input type="number" id="x_end" name="x_end"><br><br>
+        <label for="num_points">Enter number of points:</label><br>
+        <input type="number" id="num_points" name="num_points"><br><br>
+        <label for="y_init_1">Enter initial value of y (for BVP):</label><br>
+        <input type="number" id="y_init_1" name="y_init_1"><br><br>
+        <label for="y_init_2">Enter initial derivative value of y (for BVP):</label><br>
+        <input type="number" id="y_init_2" name="y_init_2"><br><br>
+        <label for="y_init">Enter initial value of y (for IVP):</label><br>
+        <input type="number" id="y_init" name="y_init"><br><br>
+        <input type="submit" value="Solve">
+    </form>
+</body>
+</html>

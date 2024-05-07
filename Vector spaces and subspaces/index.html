@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vector Calculator</title>
+</head>
+<body>
+    <h2>Vector Calculator</h2>
+    <form action="/calculate" method="POST">
+        <label for="operation">Select operation:</label><br>
+        <select id="operation" name="operation">
+            <option value="addition">Addition</option>
+            <option value="subtraction">Subtraction</option>
+            <option value="scalar_multiplication">Scalar Multiplication</option>
+            <option value="dot_product">Dot Product</option>
+            <option value="cross_product">Cross Product</option>
+            <option value="magnitude">Magnitude</option>
+        </select><br><br>
+        <label for="vector1">Enter vector 1 (as a Python list):</label><br>
+        <input type="text" id="vector1" name="vector"><br><br>
+        {% if operation != 'magnitude' %}
+        <label for="vector2">Enter vector 2 (as a Python list):</label><br>
+        <input type="text" id="vector2" name="vector"><br><br>
+        {% endif %}
+        {% if operation == 'scalar_multiplication' %}
+        <label for="scalar">Enter scalar value:</label><br>
+        <input type="number" id="scalar" name="scalar"><br><br>
+        {% endif %}
+        <input type="submit" value="Calculate">
+    </form>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+</head>
+<body>
+    <h2>Result</h2>
+    {% if result.success %}
+    <p>Solution:</p>
+    <pre>{{ result }}</pre>
+    {% else %}
+    <p>Error: {{ result.message }}</p>
+    {% endif %}
+    <a href="/">Go back</a>
+</body>
+</html>

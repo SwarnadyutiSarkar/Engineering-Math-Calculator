@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculus Calculator - Integration</title>
+</head>
+<body>
+    <h2>Calculus Calculator - Integration</h2>
+    <form action="/integrate" method="POST">
+        <label for="expression">Enter the expression:</label><br>
+        <input type="text" id="expression" name="expression"><br><br>
+        <label for="variable">Enter the variable:</label><br>
+        <input type="text" id="variable" name="variable"><br><br>
+        <label for="integration_type">Select integration type:</label><br>
+        <select id="integration_type" name="integration_type">
+            <option value="indefinite">Indefinite</option>
+            <option value="definite">Definite</option>
+        </select><br><br>
+        <div id="limits" style="display: none;">
+            <label for="lower_limit">Enter lower limit:</label><br>
+            <input type="number" id="lower_limit" name="lower_limit"><br><br>
+            <label for="upper_limit">Enter upper limit:</label><br>
+            <input type="number" id="upper_limit" name="upper_limit"><br><br>
+        </div>
+        <input type="submit" value="Integrate">
+    </form>
+    <script>
+        document.getElementById('integration_type').addEventListener('change', function() {
+            var limitsDiv = document.getElementById('limits');
+            if (this.value === 'definite') {
+                limitsDiv.style.display = 'block';
+            } else {
+                limitsDiv.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
